@@ -1,0 +1,117 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.biro.raye7task.MainScreen">
+
+    <include layout="@layout/toolbar" />
+
+
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/relative_height"
+            android:background="@color/transparentWhite"
+            android:elevation="@dimen/relative_elevation"
+            tools:targetApi="lollipop">
+
+            <TextView
+                android:id="@+id/statictext1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/static_text_from"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/statictext2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/statictext1"
+                android:layout_marginStart="@dimen/margin_start"
+                android:layout_marginTop="42dp"
+                android:text="@string/static_text_to"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edit_from"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="94dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/statictext1"
+                android:background="@drawable/edit_text_background"
+
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/edit_to"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_below="@+id/edit_from"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="94dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/statictext2"
+                android:background="@drawable/edit_text_background"
+                android:inputType="text" />
+
+
+            <ImageButton
+                android:id="@+id/current_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/statictext1"
+                android:layout_marginEnd="17dp"
+                android:background="?android:selectableItemBackground"
+                android:contentDescription="@string/currentlocation"
+                android:src="@drawable/goals" />
+
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom">
+
+            <Button
+                android:id="@+id/find_route"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/button_background"
+                android:elevation="16dp"
+                android:stateListAnimator="@null"
+                android:text="@string/find_route"
+                android:textColor="@android:color/white"
+                tools:targetApi="lollipop" />
+
+        </FrameLayout>
+
+
+    </FrameLayout>
+
+
+</LinearLayout>
